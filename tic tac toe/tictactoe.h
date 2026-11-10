@@ -1,27 +1,25 @@
+
 #pragma once
 
-#include<string> 
-#include<vector> 
-
+#include <string>
+#include <vector>
 
 namespace TicTacToe
 {
-	using twoDGrid = std::vector<std::vector<std::string>>; //making a "type alias" (for convenience and readability) 
+    // Type alias for a 2D vector
+    using twoDGrid = std::vector<std::vector<std::string>>;
 
-	//this is the grid (the gameboard)
+    // Main function that runs the game
+    void playGame(twoDGrid& ticTacToeGrid);
 
+    // Helper function that updates the grid
+    void updateGrid(
+        twoDGrid& ticTacToeGrid,
+        std::string theMove,
+        std::string playerID
+    );
 
-
-	//this function calls several other functions (helpers) and returns void (it just prints things)
-
-
-
-	void playGame(twoDGrid& ticTacToeGrid); //PASS BY REFERENCE!!!!!1
-
-
-	//this is a "helper" that is called by playGame (because playGame would be VERY complicated otherwise)
-	void updateGrid(twoDGrid& ticTacToeGrid, std::string theMove, std::string playerID);
-
-
-	void printTheGrid(twoDGrid& ticTacGrid);
+    // Helper function that prints the grid
+    void printTheGrid(twoDGrid& ticTacGrid);
 }
+
